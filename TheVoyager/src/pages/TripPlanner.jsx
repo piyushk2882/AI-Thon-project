@@ -8,10 +8,50 @@ const TripPlanner = () => {
     days: '',
     people: '',
     profile: 'solo',
-    budget: 5000
+    budget: 5000,
+    currentLocation: '',   // user's detected origin city
   });
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isDetecting, setIsDetecting] = useState(false);
   const [error, setError] = useState(null);
+  const [locationError, setLocationError] = useState(null);
+
+  // Detect current city via browser Geolocation + Nominatim reverse geocoding
+  const detectLocation = () => {
+    if (!navigator.geolocation) {
+      setLocationError('Geolocation is not supported by your browser.');
+      return;
+    }
+    setIsDetecting(true);
+    setLocationError(null);
+
+    navigator.geolocation.getCurrentPosition(
+      async ({ coords }) => {
+        try {
+          const res = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${coords.latitude}&lon=${coords.longitude}&format=json`
+          );
+          const data = await res.json();
+          const city =
+            data.address?.city ||
+            data.address?.town ||
+            data.address?.village ||
+            data.address?.state ||
+            'Unknown location';
+          setFormData((prev) => ({ ...prev, currentLocation: city }));
+        } catch {
+          setLocationError('Could not reverse-geocode your position. Please type it manually.');
+        } finally {
+          setIsDetecting(false);
+        }
+      },
+      (err) => {
+        setLocationError('Location access denied. Please type your departure city manually.');
+        setIsDetecting(false);
+      },
+      { timeout: 10000 }
+    );
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,8 +73,8 @@ const TripPlanner = () => {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Failed to generate plans');
 
-      // Navigate to comparison with the generated plans
-      navigate('/compare', { state: { plans: data.plans } });
+      // Navigate to comparison with the generated plans AND formData for Supabase save
+      navigate('/compare', { state: { plans: data.plans, formData } });
     } catch (err) {
       setError(err.message);
       setIsGenerating(false);
@@ -77,6 +117,46 @@ const TripPlanner = () => {
                   {error}
                 </div>
               )}
+
+              {/* Departing From — Current Location */}
+              <div className="space-y-3">
+                  <label className="block text-sm font-semibold text-on-surface-variant uppercase tracking-wider ml-1">Departing From</label>
+                  <div className="relative group">
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors">my_location</span>
+                      <input
+                        className="w-full pl-12 pr-36 py-4 bg-surface-container-high rounded-md border-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline-variant"
+                        placeholder="Your departure city"
+                        type="text"
+                        value={formData.currentLocation}
+                        onChange={(e) => setFormData({ ...formData, currentLocation: e.target.value })}
+                      />
+                      <button
+                        type="button"
+                        onClick={detectLocation}
+                        disabled={isDetecting}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5 bg-primary/10 hover:bg-primary/20 text-primary px-3 py-2 rounded-md text-xs font-bold transition-colors disabled:opacity-60"
+                      >
+                        {isDetecting ? (
+                          <span className="material-symbols-outlined text-sm animate-spin">progress_activity</span>
+                        ) : (
+                          <span className="material-symbols-outlined text-sm">gps_fixed</span>
+                        )}
+                        {isDetecting ? 'Detecting...' : 'Auto-detect'}
+                      </button>
+                  </div>
+                  {locationError && (
+                    <p className="text-xs text-error font-medium ml-1 flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">warning</span>
+                      {locationError}
+                    </p>
+                  )}
+                  {formData.currentLocation && !locationError && (
+                    <p className="text-xs text-primary font-semibold ml-1 flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">check_circle</span>
+                      Departing from: {formData.currentLocation}
+                    </p>
+                  )}
+              </div>
 
               {/* Destination */}
               <div className="space-y-3">
