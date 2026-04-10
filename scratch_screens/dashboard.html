@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Ethereal Voyager - Your Curated Itineraries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eaeef1",
+                    "on-tertiary-fixed-variant": "#7f004b",
+                    "surface": "#f7f9fb",
+                    "on-error": "#fff7f7",
+                    "secondary-dim": "#7717c6",
+                    "outline": "#757c7f",
+                    "on-secondary-container": "#7614c4",
+                    "surface-container-high": "#e3e9ec",
+                    "background": "#f7f9fb",
+                    "tertiary": "#b5146e",
+                    "primary-fixed": "#babbff",
+                    "inverse-on-surface": "#9a9d9f",
+                    "inverse-primary": "#8083ff",
+                    "on-error-container": "#68001f",
+                    "on-tertiary-fixed": "#470027",
+                    "outline-variant": "#acb3b7",
+                    "on-tertiary-container": "#6f0041",
+                    "on-primary": "#fbf7ff",
+                    "error": "#ac3149",
+                    "inverse-surface": "#0b0f10",
+                    "secondary-container": "#f0dbff",
+                    "on-secondary": "#fff6ff",
+                    "on-primary-fixed-variant": "#2d2cbd",
+                    "primary-dim": "#3d3dcb",
+                    "surface-bright": "#f7f9fb",
+                    "primary": "#4a4bd7",
+                    "primary-container": "#babbff",
+                    "surface-container-low": "#f1f4f6",
+                    "tertiary-dim": "#a30061",
+                    "on-primary-fixed": "#0c0090",
+                    "on-secondary-fixed-variant": "#8126cf",
+                    "error-container": "#f76a80",
+                    "tertiary-fixed-dim": "#ff82b8",
+                    "on-surface-variant": "#596063",
+                    "on-secondary-fixed": "#5e00a2",
+                    "surface-variant": "#dde3e7",
+                    "on-tertiary": "#fff7f7",
+                    "secondary": "#842cd3",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#aaacff",
+                    "secondary-fixed-dim": "#e7c9ff",
+                    "error-dim": "#770326",
+                    "tertiary-container": "#ff9ac2",
+                    "on-primary-container": "#221eb5",
+                    "surface-dim": "#d3dbdf",
+                    "tertiary-fixed": "#ff9ac2",
+                    "surface-tint": "#4a4bd7",
+                    "on-surface": "#2d3337",
+                    "surface-container-highest": "#dde3e7",
+                    "on-background": "#2d3337",
+                    "secondary-fixed": "#f0dbff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-3xl shadow-[0_40px_60px_rgba(0,0,0,0.04)] dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tight text-indigo-600 dark:text-indigo-400 font-headline">The Ethereal Voyager</span>
+<div class="hidden md:flex gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Explore</a>
+<a class="text-indigo-600 dark:text-indigo-300 font-semibold border-b-2 border-indigo-600" href="#">My Trips</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Itineraries</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Support</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-gradient-to-br from-primary to-secondary text-on-primary px-6 py-2.5 rounded-full font-semibold scale-105 active:scale-95 transition-transform">
+                    Plan New Trip
+                </button>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-28 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Trip Summary Header -->
+<header class="mb-12">
+<div class="bg-surface-container-low p-8 md:p-12 rounded-xl relative overflow-hidden">
+<!-- Background Decoration -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 left-1/2 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<span class="inline-flex items-center gap-2 px-3 py-1 bg-white rounded-full text-xs font-bold text-primary tracking-wider mb-4 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span> AI-CURATED JOURNEY
+                            </span>
+<h1 class="text-4xl md:text-5xl font-extrabold font-headline tracking-tight text-on-surface mb-2">Tokyo to Kyoto: The Cultural Veil</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl font-light">10 Days through neon skylines, ancient cedar forests, and the timeless artistry of Japanese hospitality.</p>
+</div>
+<div class="flex gap-6 border-l border-outline-variant/30 pl-6 h-fit">
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Duration</p>
+<p class="font-bold text-xl">10 Days</p>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Travelers</p>
+<p class="font-bold text-xl">2 Adults</p>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Season</p>
+<p class="font-bold text-xl">Autumn</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Plan Comparison Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+<!-- Budget Plan Card -->
+<div class="flex flex-col bg-surface-container-lowest rounded-lg p-8 shadow-[0_40px_60px_rgba(0,0,0,0.04)] hover:shadow-[0_40px_60px_rgba(0,0,0,0.08)] transition-all duration-300 border border-transparent hover:border-outline-variant/20 group">
+<div class="mb-8">
+<h3 class="text-2xl font-bold font-headline text-on-surface mb-1">Budget</h3>
+<p class="text-on-surface-variant text-sm font-medium">Authentic &amp; Immersive</p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-extrabold text-on-surface">$2,450</span>
+<span class="text-on-surface-variant text-sm">/ total</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 italic">Includes hostels &amp; public transit</p>
+</div>
+<div class="space-y-6 flex-grow mb-12">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="bed">bed</span>
+<div>
+<p class="font-bold text-sm">Stays</p>
+<p class="text-sm text-on-surface-variant">Modern capsule hotels &amp; boutique hostels</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="directions_subway">directions_subway</span>
+<div>
+<p class="font-bold text-sm">Transport</p>
+<p class="text-sm text-on-surface-variant">7-Day JR Pass (Ordinary) &amp; Suica Card</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+<div>
+<p class="font-bold text-sm">Dining</p>
+<p class="text-sm text-on-surface-variant">Izakaya crawls &amp; Michelin-level Ramen stalls</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 px-6 rounded-full font-bold text-primary bg-surface-container-low hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200">
+                    View Details
+                </button>
+</div>
+<!-- Standard (Recommended) Plan Card -->
+<div class="relative flex flex-col bg-surface-container-lowest rounded-lg p-8 shadow-[0_50px_80px_rgba(74,75,215,0.12)] border-2 border-primary group transform lg:-translate-y-4">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-lg">
+                    Recommended
+                </div>
+<div class="mb-8">
+<h3 class="text-2xl font-bold font-headline text-on-surface mb-1">Standard</h3>
+<p class="text-on-surface-variant text-sm font-medium">The Balanced Voyager</p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-extrabold text-on-surface">$4,800</span>
+<span class="text-on-surface-variant text-sm">/ total</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 italic">4-star Ryokans &amp; Green Car travel</p>
+</div>
+<div class="space-y-6 flex-grow mb-12">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="apartment">apartment</span>
+<div>
+<p class="font-bold text-sm">Stays</p>
+<p class="text-sm text-on-surface-variant">Upscale design hotels &amp; traditional Ryokan stays</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="train">train</span>
+<div>
+<p class="font-bold text-sm">Transport</p>
+<p class="text-sm text-on-surface-variant">Green Car JR Pass &amp; private airport transfers</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="map">map</span>
+<div>
+<p class="font-bold text-sm">Experiences</p>
+<p class="text-sm text-on-surface-variant">Private Tea Ceremony &amp; Ghibli Museum passes</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<div>
+<p class="font-bold text-sm">AI Concierge</p>
+<p class="text-sm text-on-surface-variant">24/7 dynamic itinerary adjustments</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 px-6 rounded-full font-bold text-on-primary bg-gradient-to-br from-primary to-secondary scale-105 active:scale-95 transition-transform shadow-xl">
+                    View Details
+                </button>
+</div>
+<!-- Premium Plan Card -->
+<div class="flex flex-col bg-surface-container-lowest rounded-lg p-8 shadow-[0_40px_60px_rgba(0,0,0,0.04)] hover:shadow-[0_40px_60px_rgba(0,0,0,0.08)] transition-all duration-300 border border-transparent hover:border-outline-variant/20 group">
+<div class="mb-8 text-right lg:text-left">
+<h3 class="text-2xl font-bold font-headline text-on-surface mb-1">Premium</h3>
+<p class="text-on-surface-variant text-sm font-medium">Ultimate Serenity</p>
+</div>
+<div class="mb-8 text-right lg:text-left">
+<div class="flex items-baseline justify-end lg:justify-start gap-1">
+<span class="text-3xl font-extrabold text-on-surface">$12,900</span>
+<span class="text-on-surface-variant text-sm">/ total</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 italic">Luxury suites &amp; private chauffeurs</p>
+</div>
+<div class="space-y-6 flex-grow mb-12">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="star">star</span>
+<div>
+<p class="font-bold text-sm">Stays</p>
+<p class="text-sm text-on-surface-variant">Aman Tokyo &amp; private villas in Kyoto</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="directions_car">directions_car</span>
+<div>
+<p class="font-bold text-sm">Transport</p>
+<p class="text-sm text-on-surface-variant">Private car services throughout the journey</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="temple_buddhist">temple_buddhist</span>
+<div>
+<p class="font-bold text-sm">Exclusive Access</p>
+<p class="text-sm text-on-surface-variant">After-hours temple tours &amp; Geisha dinner</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 px-6 rounded-full font-bold text-on-surface bg-white border border-outline-variant/30 hover:border-secondary hover:text-secondary transition-all duration-200">
+                    View Details
+                </button>
+</div>
+</section>
+<!-- Signature AI Component: Luminous Itinerary (Preview Section) -->
+<section class="mt-20">
+<h2 class="text-2xl font-bold font-headline mb-8 text-center lg:text-left">A Glimpse into the Experience</h2>
+<div class="relative min-h-[400px] rounded-xl overflow-hidden flex items-center justify-center">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="misty morning in a traditional Japanese bamboo forest with soft ethereal sunlight filtering through the leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeV89oLkJR7D12ewNqdp8tgag3jx69y524fKnxWKiqFlOaUd1O2OS2TtmPk4KlNrtaeLptqDFMq6_ZZKnYeMnMeJkc8m-ghzpzyj5yQ6Kyihb2wXTlT2Ak24iwiX1o8rqKVfl591ccuIuHz7bP4iOwQzwtaWa957ZEaCot8hkP1BqCVCQyT6fG8OqY6q7ThiYzUaxngfIzMSNH7V2ALEuhhG6OdwSDkbO0VKi4_XoyjAESMKmkbRQffaBzoEOjic_qktllZ7KA6ldK"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-surface/20"></div>
+</div>
+<!-- Floating Glass Panel -->
+<div class="relative z-10 glass-card p-10 max-w-2xl mx-6 rounded-lg border border-white/20 shadow-2xl">
+<div class="flex items-start gap-6">
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">03</div>
+<div class="w-2 h-32 bg-surface-container-highest rounded-full my-2"></div>
+</div>
+<div>
+<h4 class="text-xs font-bold text-primary tracking-widest uppercase mb-2">Day Three: Tokyo Awakening</h4>
+<h3 class="text-3xl font-bold font-headline mb-4">Sunrise at Tsukiji &amp; Zen Garden Meditation</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Experience the pulse of the city before it wakes. Our AI has timed your arrival at the inner market to perfectly precede the morning prayer at Senso-ji.</p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Private Guide</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Luxury Transport</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Sushi Breakfast</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-12 px-8 mt-auto">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-bold text-slate-900 dark:text-white text-xl">The Ethereal Voyager</span>
+<p class="text-sm text-slate-500 font-light Inter">© 2024 The Ethereal Voyager. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm text-slate-500 font-light hover:text-indigo-400 underline underline-offset-4 transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-500 font-light hover:text-indigo-400 underline underline-offset-4 transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="text-sm text-slate-500 font-light hover:text-indigo-400 underline underline-offset-4 transition-opacity duration-200" href="#">Cookie Settings</a>
+<a class="text-sm text-slate-500 font-light hover:text-indigo-400 underline underline-offset-4 transition-opacity duration-200" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>

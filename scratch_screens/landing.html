@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Ethereal Voyager | AI Travel Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eaeef1",
+                    "on-tertiary-fixed-variant": "#7f004b",
+                    "surface": "#f7f9fb",
+                    "on-error": "#fff7f7",
+                    "secondary-dim": "#7717c6",
+                    "outline": "#757c7f",
+                    "on-secondary-container": "#7614c4",
+                    "surface-container-high": "#e3e9ec",
+                    "background": "#f7f9fb",
+                    "tertiary": "#b5146e",
+                    "primary-fixed": "#babbff",
+                    "inverse-on-surface": "#9a9d9f",
+                    "inverse-primary": "#8083ff",
+                    "on-error-container": "#68001f",
+                    "on-tertiary-fixed": "#470027",
+                    "outline-variant": "#acb3b7",
+                    "on-tertiary-container": "#6f0041",
+                    "on-primary": "#fbf7ff",
+                    "error": "#ac3149",
+                    "inverse-surface": "#0b0f10",
+                    "secondary-container": "#f0dbff",
+                    "on-secondary": "#fff6ff",
+                    "on-primary-fixed-variant": "#2d2cbd",
+                    "primary-dim": "#3d3dcb",
+                    "surface-bright": "#f7f9fb",
+                    "primary": "#4a4bd7",
+                    "primary-container": "#babbff",
+                    "surface-container-low": "#f1f4f6",
+                    "tertiary-dim": "#a30061",
+                    "on-primary-fixed": "#0c0090",
+                    "on-secondary-fixed-variant": "#8126cf",
+                    "error-container": "#f76a80",
+                    "tertiary-fixed-dim": "#ff82b8",
+                    "on-surface-variant": "#596063",
+                    "on-secondary-fixed": "#5e00a2",
+                    "surface-variant": "#dde3e7",
+                    "on-tertiary": "#fff7f7",
+                    "secondary": "#842cd3",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#aaacff",
+                    "secondary-fixed-dim": "#e7c9ff",
+                    "error-dim": "#770326",
+                    "tertiary-container": "#ff9ac2",
+                    "on-primary-container": "#221eb5",
+                    "surface-dim": "#d3dbdf",
+                    "tertiary-fixed": "#ff9ac2",
+                    "surface-tint": "#4a4bd7",
+                    "on-surface": "#2d3337",
+                    "surface-container-highest": "#dde3e7",
+                    "on-background": "#2d3337",
+                    "secondary-fixed": "#f0dbff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #4a4bd7 0%, #842cd3 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #4a4bd7 0%, #842cd3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ambient-shadow {
+            box-shadow: 0 40px 60px rgba(74, 75, 215, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-3xl flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-bold tracking-tight text-indigo-600">The Ethereal Voyager</div>
+<div class="hidden md:flex items-center space-gap-8 gap-8">
+<a class="text-indigo-600 font-semibold border-b-2 border-indigo-600 transition-colors duration-200" href="#">Explore</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">My Trips</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Itineraries</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-600 scale-105 active:scale-95 transition-transform" data-icon="account_circle">account_circle</button>
+<button class="signature-gradient text-on-primary px-6 py-2.5 rounded-full font-semibold scale-105 active:scale-95 transition-transform shadow-lg">Plan New Trip</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 py-24 md:py-40 overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="absolute top-0 right-0 -z-10 w-full h-full">
+<div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] rounded-full bg-secondary/10 blur-[100px]"></div>
+</div>
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-sm font-semibold tracking-wide">
+                        AI-POWERED EXPLORATION
+                    </span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.1]">
+                        Plan Your <span class="text-gradient">Perfect Trip</span> with AI
+                    </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                        Experience the future of travel. Our AI concierge crafts bespoke itineraries that balance adventure, luxury, and your unique rhythm.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="signature-gradient text-white px-8 py-4 rounded-full text-lg font-bold shadow-xl hover:scale-105 active:scale-95 transition-transform flex items-center gap-2">
+                            Start Planning
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="px-8 py-4 rounded-full text-lg font-bold border-2 border-outline-variant/20 hover:bg-surface-container-low transition-colors flex items-center gap-2">
+                            View Samples
+                        </button>
+</div>
+</div>
+<!-- Floating Glass Hero Component -->
+<div class="relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative">
+<img alt="Serene beach" class="w-full h-full object-cover" data-alt="high-end luxury resort infinity pool overlooking a turquoise tropical ocean at sunset with soft purple and orange sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-fWYo6njpFjDd5wiXIjT3yx3flzEKvBVxx-vUZhkzIWBbswuORixJdSwab3YwkV8AwlBxAqUAQ2iaQ5x4A68P4j_Amje85ArZikqBSdSe6K--3eei-8LfuDdmfKpPsQy2fx8zog3UbyXCep3txflvmkdoZsQxNSQcWm3FLJ0H4q4cq1qTSnSmCSaCKWn6zbyLUv5DYYlO2HYyC8bsounOaE3Jfiai8K4UuDrQGhH9fc_gyHJcjQKDRePqVRpi2raLm5kBCWR2B1G_"/>
+<!-- Overlapping Glass Card -->
+<div class="absolute -bottom-6 -left-6 md:-left-12 glass-panel p-8 rounded-lg ambient-shadow border border-white/40 max-w-xs md:max-w-sm">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full signature-gradient flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary">AI Recommendation</p>
+<p class="text-xs text-on-surface-variant">Optimal route found</p>
+</div>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2">Amalfi Coast Escape</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+                                    7 Days in June
+                                </div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="payments">payments</span>
+                                    $4,200 - $5,800
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold">Next-Gen Travel Intelligence</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Sophisticated tools designed to handle the complexity of travel, so you can focus on the journey.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- AI Generation Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-lg p-8 ambient-shadow relative overflow-hidden group">
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline text-3xl font-bold mb-4">Hyper-Personalized AI Generation</h3>
+<p class="text-on-surface-variant text-lg max-w-md mb-8">Our proprietary LLM analyzes millions of data points to create itineraries that match your pacing, interests, and dietary needs.</p>
+<div class="flex gap-4">
+<span class="px-4 py-2 rounded-full bg-surface-container text-xs font-bold uppercase tracking-wider">Dynamic Routing</span>
+<span class="px-4 py-2 rounded-full bg-surface-container text-xs font-bold uppercase tracking-wider">Taste Profiling</span>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-1/2 h-full hidden md:block">
+<div class="w-full h-full opacity-20 group-hover:opacity-30 transition-opacity">
+<img alt="Cityscape" class="w-full h-full object-cover" data-alt="blurred neon cityscape of Tokyo at night with light trails and modern architecture reflecting a high-tech vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYxUcp4Ut6gWMB-4XmhKSfH13V91Gr-bTW9wtfd1dKhM4riCeGNF4VibqZAQbzojLVgVEdBFje7y_ePuH5Qp5VLolvol1C4DRE3djGrxDyi-qtydnXtbbQ_gYwgmYFxVhRjdmnJYaUqn-e-Ta_8XYo4Y_xtPF7YkU0hTdogYS8NukHxIAlj3Udl22nlNXMyOtNhu4Lb8pTdXeUkxG1KgmYlC6eWCpOQzI8kFXnCCObCEOv3PuHDbyxuAnGj0QuJE8C9ZLhKnXS0TsG"/>
+</div>
+</div>
+</div>
+<!-- Budget Card -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-8 ambient-shadow flex flex-col justify-between border-t-4 border-secondary">
+<div>
+<div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="analytics">analytics</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Budget Precision</h3>
+<p class="text-on-surface-variant">Real-time comparison across airlines, hotels, and local experiences to ensure maximum value.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-surface-container">
+<div class="flex justify-between items-center text-sm font-bold">
+<span>Estimated Savings</span>
+<span class="text-secondary">Up to 24%</span>
+</div>
+</div>
+</div>
+<!-- Smart Recommendations -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-lg p-8 ambient-shadow flex flex-col">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Smart Curation</h3>
+<p class="text-on-surface-variant mb-6">Hidden gems that aren't on typical travel blogs, curated by our AI from local whispers.</p>
+<div class="mt-auto flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200"></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300"></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-400"></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary text-white flex items-center justify-center text-xs font-bold">+12k</div>
+</div>
+</div>
+<!-- Itinerary Visualizer -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-lg p-8 ambient-shadow overflow-hidden">
+<h3 class="font-headline text-2xl font-bold mb-8">The Luminous Timeline</h3>
+<div class="space-y-6">
+<!-- Day 1 -->
+<div class="flex gap-6 items-start">
+<div class="flex flex-col items-center">
+<div class="w-4 h-4 rounded-full bg-primary shadow-[0_0_12px_rgba(74,75,215,0.5)]"></div>
+<div class="w-2 h-20 bg-surface-container-highest rounded-full mt-2"></div>
+</div>
+<div class="glass-panel p-6 rounded-md border border-white/50 flex-1">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold">Sunrise Hike: Diamond Head</h4>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">MORNING</span>
+</div>
+<p class="text-sm text-on-surface-variant">Breathtaking views of the Pacific coast followed by a local acai breakfast.</p>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="flex gap-6 items-start opacity-60">
+<div class="flex flex-col items-center">
+<div class="w-4 h-4 rounded-full bg-secondary shadow-[0_0_12px_rgba(132,44,211,0.5)]"></div>
+<div class="w-2 h-12 bg-surface-container-highest rounded-full mt-2"></div>
+</div>
+<div class="glass-panel p-6 rounded-md border border-white/50 flex-1">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold">Helicopter Island Tour</h4>
+<span class="text-xs font-bold text-secondary px-2 py-1 bg-secondary/10 rounded">AFTERNOON</span>
+</div>
+<p class="text-sm text-on-surface-variant">A private flight over hidden waterfalls and jurassic valleys.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-5xl mx-auto rounded-xl signature-gradient p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<img alt="Travel map" class="w-full h-full object-cover" data-alt="abstract top-down view of a world map with interconnected lines representing global travel routes in a minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc-Nadrdwq6beos8zPPw6zYp2QfAcu78y70bU_mwPdahH-ffeoNmAAG4kVTeOPUU-u_R2gQ295fKdIusAQizIG87iMRdaG_KZddtNCwrxN2GLbpmRl4EQ4ew_mr7nBbrPjzRpSng7r5wfCevOpdU59YOF4FkMplH_FO1z2tY73vcA9iySNn8HYXg0Bdm5OtzIwBDFX90J1Q9cpLjUauSGLutyk-ZHDl65ghuik_PwxRXaitC1bpMwlHzw296YFRy2-5aWop9xrOghF"/>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white mb-8">Your next horizon is calling.</h2>
+<p class="text-white/80 text-xl max-w-2xl mx-auto mb-12">Join thousands of voyagers using AI to discover the world in its most beautiful light.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<input class="px-8 py-4 rounded-full bg-white/20 border-none text-white placeholder:text-white/60 focus:ring-2 focus:ring-white min-w-[300px] backdrop-blur-md" placeholder="Enter your email" type="email"/>
+<button class="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all shadow-xl">Get Early Access</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<div class="font-bold text-slate-900 text-xl">The Ethereal Voyager</div>
+<p class="text-sm text-slate-500 font-light Inter text-center md:text-left">© 2024 The Ethereal Voyager. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm text-slate-500 font-light Inter hover:text-indigo-400 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-500 font-light Inter hover:text-indigo-400 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-sm text-slate-500 font-light Inter hover:text-indigo-400 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Cookie Settings</a>
+<a class="text-sm text-slate-500 font-light Inter hover:text-indigo-400 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>

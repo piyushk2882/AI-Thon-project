@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Plan Your Journey | The Ethereal Voyager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eaeef1",
+                    "on-tertiary-fixed-variant": "#7f004b",
+                    "surface": "#f7f9fb",
+                    "on-error": "#fff7f7",
+                    "secondary-dim": "#7717c6",
+                    "outline": "#757c7f",
+                    "on-secondary-container": "#7614c4",
+                    "surface-container-high": "#e3e9ec",
+                    "background": "#f7f9fb",
+                    "tertiary": "#b5146e",
+                    "primary-fixed": "#babbff",
+                    "inverse-on-surface": "#9a9d9f",
+                    "inverse-primary": "#8083ff",
+                    "on-error-container": "#68001f",
+                    "on-tertiary-fixed": "#470027",
+                    "outline-variant": "#acb3b7",
+                    "on-tertiary-container": "#6f0041",
+                    "on-primary": "#fbf7ff",
+                    "error": "#ac3149",
+                    "inverse-surface": "#0b0f10",
+                    "secondary-container": "#f0dbff",
+                    "on-secondary": "#fff6ff",
+                    "on-primary-fixed-variant": "#2d2cbd",
+                    "primary-dim": "#3d3dcb",
+                    "surface-bright": "#f7f9fb",
+                    "primary": "#4a4bd7",
+                    "primary-container": "#babbff",
+                    "surface-container-low": "#f1f4f6",
+                    "tertiary-dim": "#a30061",
+                    "on-primary-fixed": "#0c0090",
+                    "on-secondary-fixed-variant": "#8126cf",
+                    "error-container": "#f76a80",
+                    "tertiary-fixed-dim": "#ff82b8",
+                    "on-surface-variant": "#596063",
+                    "on-secondary-fixed": "#5e00a2",
+                    "surface-variant": "#dde3e7",
+                    "on-tertiary": "#fff7f7",
+                    "secondary": "#842cd3",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#aaacff",
+                    "secondary-fixed-dim": "#e7c9ff",
+                    "error-dim": "#770326",
+                    "tertiary-container": "#ff9ac2",
+                    "on-primary-container": "#221eb5",
+                    "surface-dim": "#d3dbdf",
+                    "tertiary-fixed": "#ff9ac2",
+                    "surface-tint": "#4a4bd7",
+                    "on-surface": "#2d3337",
+                    "surface-container-highest": "#dde3e7",
+                    "on-background": "#2d3337",
+                    "secondary-fixed": "#f0dbff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #4a4bd7;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(74, 75, 215, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-3xl shadow-[0_40px_60px_rgba(0,0,0,0.04)] flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-bold tracking-tight text-indigo-600 dark:text-indigo-400 font-headline">The Ethereal Voyager</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Explore</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">My Trips</a>
+<a class="text-indigo-600 font-semibold border-b-2 border-indigo-600" href="#">Itineraries</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-semibold scale-105 active:scale-95 transition-transform">Plan New Trip</button>
+<span class="material-symbols-outlined text-slate-600 text-3xl cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="min-h-screen pt-32 pb-20 px-4 flex flex-col items-center justify-center bg-surface">
+<!-- Decorative Background Elements -->
+<div class="fixed top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Page Header -->
+<header class="text-center mb-12 max-w-2xl">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-6">
+                Where will AI take you <span class="text-primary italic">next?</span>
+</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                Provide a few details about your ideal escape, and our Digital Concierge will curate a seamless, magazine-worthy itinerary just for you.
+            </p>
+</header>
+<!-- Input Form Card -->
+<div class="w-full max-w-4xl bg-surface-container-lowest rounded-xl shadow-[0_40px_60px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
+<!-- Left Side: Visual/Context -->
+<div class="md:w-1/3 relative bg-primary-container overflow-hidden hidden md:block">
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="Dreamy landscape of a mist-covered mountain lake at twilight with ethereal purple and blue hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkRLhxLvwZM74lZTz4yW923X-yF_7ndUKZvwJYJaqQro8pFJqW-reUoQtSRf1hkViytKmADmcLvTERqIK86vmW3mDAKHINLg85Ru-lu10raw-XWE9xco2NFbl10XzzW1EUGBspS1JjvO4Z_hPNWD2-Sl8kCxcSJPCG2GldqkXni7WyQ_MRF1Kbm2N6VKev3cLg4ehEwtd42V7YY_P4kSZYbIbAyD9L4-tTHcwKGa-5rurosdIr4s0S2V6ZhJ7PU8itcZEtcFa7Hlp7"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end text-on-primary-container">
+<div class="mb-4">
+<span class="material-symbols-outlined text-4xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Curated Journeys</h3>
+<p class="text-sm opacity-80 leading-relaxed">Our AI analyzes millions of data points to ensure your trip is perfectly balanced between adventure and relaxation.</p>
+</div>
+</div>
+<!-- Right Side: Form Fields -->
+<form class="flex-1 p-8 md:p-12 space-y-8 bg-surface-container-lowest">
+<!-- Destination -->
+<div class="space-y-3">
+<label class="block text-sm font-semibold text-on-surface-variant uppercase tracking-wider ml-1">Destination</label>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="explore">explore</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high rounded-md border-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline-variant" placeholder="Where do you want to go?" type="text"/>
+</div>
+</div>
+<!-- Days & People Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-3">
+<label class="block text-sm font-semibold text-on-surface-variant uppercase tracking-wider ml-1">Number of Days</label>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="calendar_today">calendar_today</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high rounded-md border-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline-variant" max="90" min="1" placeholder="Duration" type="number"/>
+</div>
+</div>
+<div class="space-y-3">
+<label class="block text-sm font-semibold text-on-surface-variant uppercase tracking-wider ml-1">Number of People</label>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="group">group</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high rounded-md border-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline-variant" min="1" placeholder="Total travelers" type="number"/>
+</div>
+</div>
+</div>
+<!-- Traveler Type (Custom Radio Pills) -->
+<div class="space-y-3">
+<label class="block text-sm font-semibold text-on-surface-variant uppercase tracking-wider ml-1">Traveler Type</label>
+<div class="flex flex-wrap gap-3">
+<label class="cursor-pointer group">
+<input checked="" class="hidden peer" name="traveler_type" type="radio"/>
+<div class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+                                Solo
+                            </div>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="traveler_type" type="radio"/>
+<div class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+                                Couple
+                            </div>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="traveler_type" type="radio"/>
+<div class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="groups">groups</span>
+                                Group
+                            </div>
+</label>
+</div>
+</div>
+<!-- Budget Slider -->
+<div class="space-y-4">
+<div class="flex justify-between items-center ml-1">
+<label class="block text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Budget Range</label>
+<span class="text-primary font-bold font-headline">$2,500 — $5,000+</span>
+</div>
+<div class="relative pt-4 px-2">
+<input class="w-full h-2 bg-surface-container-highest rounded-full appearance-none cursor-pointer" max="10000" min="500" step="500" type="range" value="5000"/>
+<div class="flex justify-between mt-4 text-[10px] text-outline uppercase font-bold tracking-widest">
+<span>Economic</span>
+<span>Mid-Range</span>
+<span>Luxury</span>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-6">
+<button class="w-full py-5 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-bold text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3" type="submit">
+<span class="material-symbols-outlined" data-icon="auto_mode" style="font-variation-settings: 'FILL' 1;">auto_mode</span>
+                        Generate Plans
+                    </button>
+</div>
+</form>
+</div>
+<!-- Featured Destinations Preview (Bento Section) -->
+<section class="w-full max-w-6xl mt-32 space-y-12">
+<div class="text-center">
+<h2 class="font-headline text-3xl font-bold mb-4">Trending This Season</h2>
+<p class="text-on-surface-variant">Top itineraries created by the community.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- Item 1 -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-lg overflow-hidden relative group cursor-pointer shadow-[0_20px_40px_rgba(0,0,0,0.03)]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern London cityscape with the Shard and Tower Bridge at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAggT13XKtkU48BzMMJQ-g4YGL_KxoKF1kGq6mYD_w23AEaOtjgUdh6p-Vf8kfMfoLnRD0UZqf3HBI4-LJ41Et3G7SKmbC9syNB_vHRto-5TfZX7X6h8pXazHTgOzo5yWxliNeXlF8e8FkrpD89_UMw9iXfKjYSCtbdrINvbPWhwlplRjNH3DTgh3g3VAXO92dRG_EpJ7DohaH8dFN26U0CyKxksuXfv2tjY0F3cboVwOkl11BSnjmLl41Mpb3BBWZdFfq2c4td8r2w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3 inline-block">7 Days</span>
+<h4 class="font-headline text-3xl font-bold">London Modernity</h4>
+<p class="text-sm opacity-80 max-w-xs mt-2">Explore the pulse of London's skyline and contemporary art scene.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-lg overflow-hidden relative group cursor-pointer shadow-[0_20px_40px_rgba(0,0,0,0.03)]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Lush green rice terraces in Bali under a soft morning sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWYipAIcoEOXTrqSAXtoj2InuLk8NfwWwsp7WfiLV1FxaoaGDJVS5Yzg1E4n6xquHmLMDvoV61qSfmCuFJ0JDOlsquvg9eVXQq7TSgC61u4573-D1SLQq_MsMHnwHNwCEazk1HkNMVSPqezi6LDplezUaCEqseAfQyo7uJPFuBLSdIWfPPbvET3Wiw3bzG96ZtmUhf7hVFjp7JEnIKQjvrwpvGuagohKsqWDfaDrIcgQZE-nvjr65ggOWTIcY0qpGlZ2jH3nCkNpHM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3 inline-block">12 Days</span>
+<h4 class="font-headline text-3xl font-bold">Bali Zen</h4>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-lg overflow-hidden relative group cursor-pointer shadow-[0_20px_40px_rgba(0,0,0,0.03)]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Ancient Japanese temple in Kyoto surrounded by vibrant red maple leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1VXVd9GJ5LB164rv_U3ywwcLaT6b2bdy8WXOKjYRf1TbNK_8y9aJOIc9rSNvuN0gKMYbXcZ07k9muElyOxMsltkDAsl8dDVkvnmwy4mhgJeHECbDDdRCU70H0kzevkCMPkq7S9PzDEJrmReIr5vn8KazouGYApxCXk44bw_E1mzy1F2Uf7yn0dis97W_d2No4rOoEjXBLElV1t1hoWJhxXEVQkcYKuCSt9-wV8PGM1LRLai-GB_A2VT5XTqZndJO5KVkd4cVcEZhQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<h4 class="font-headline text-2xl font-bold">Kyoto Tradition</h4>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-lg overflow-hidden relative group cursor-pointer shadow-[0_20px_40px_rgba(0,0,0,0.03)]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Colorful houses of Cinque Terre perched on a cliffside overlooking the Mediterranean sea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4B7KXMPT1UsvLD5vk9Pb8crLllqc36WXQ8UbsbyBSlFY3CXRNb9X-DxtssM6VI0p4PJXEUa8hpLFYCAyii0vrTaOH8QyPwfmHYT1X-X9lgKjpq5kX6IMzlwHS_5HmH9aJKVa6kGdAPN0iUhmY6I5e-Q9U5Lya9OSySHMwPHrivNuDDiT20QSPKuv74okPuJRdBPu8Fjk2TbHB-Kr1PDq9R46ur5GSn_Js2uC7drGu2R2Uc0-KKL8Ovs_hGcuCg9iFlyREOyGT0jFu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3 inline-block">10 Days</span>
+<h4 class="font-headline text-3xl font-bold">Italian Coastline Escape</h4>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-bold text-slate-900 font-headline text-lg">The Ethereal Voyager</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm text-slate-500 font-light Inter hover:text-indigo-400 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-500 font-light Inter hover:text-indigo-400 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-sm text-slate-500 font-light Inter hover:text-indigo-400 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Cookie Settings</a>
+<a class="text-sm text-slate-500 font-light Inter hover:text-indigo-400 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Us</a>
+</div>
+<div class="text-sm text-slate-500 font-light Inter">© 2024 The Ethereal Voyager. All rights reserved.</div>
+</footer>
+</body></html>

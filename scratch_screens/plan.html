@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Ethereal Voyager | Plan Comparison</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eaeef1",
+                    "on-tertiary-fixed-variant": "#7f004b",
+                    "surface": "#f7f9fb",
+                    "on-error": "#fff7f7",
+                    "secondary-dim": "#7717c6",
+                    "outline": "#757c7f",
+                    "on-secondary-container": "#7614c4",
+                    "surface-container-high": "#e3e9ec",
+                    "background": "#f7f9fb",
+                    "tertiary": "#b5146e",
+                    "primary-fixed": "#babbff",
+                    "inverse-on-surface": "#9a9d9f",
+                    "inverse-primary": "#8083ff",
+                    "on-error-container": "#68001f",
+                    "on-tertiary-fixed": "#470027",
+                    "outline-variant": "#acb3b7",
+                    "on-tertiary-container": "#6f0041",
+                    "on-primary": "#fbf7ff",
+                    "error": "#ac3149",
+                    "inverse-surface": "#0b0f10",
+                    "secondary-container": "#f0dbff",
+                    "on-secondary": "#fff6ff",
+                    "on-primary-fixed-variant": "#2d2cbd",
+                    "primary-dim": "#3d3dcb",
+                    "surface-bright": "#f7f9fb",
+                    "primary": "#4a4bd7",
+                    "primary-container": "#babbff",
+                    "surface-container-low": "#f1f4f6",
+                    "tertiary-dim": "#a30061",
+                    "on-primary-fixed": "#0c0090",
+                    "on-secondary-fixed-variant": "#8126cf",
+                    "error-container": "#f76a80",
+                    "tertiary-fixed-dim": "#ff82b8",
+                    "on-surface-variant": "#596063",
+                    "on-secondary-fixed": "#5e00a2",
+                    "surface-variant": "#dde3e7",
+                    "on-tertiary": "#fff7f7",
+                    "secondary": "#842cd3",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#aaacff",
+                    "secondary-fixed-dim": "#e7c9ff",
+                    "error-dim": "#770326",
+                    "tertiary-container": "#ff9ac2",
+                    "on-primary-container": "#221eb5",
+                    "surface-dim": "#d3dbdf",
+                    "tertiary-fixed": "#ff9ac2",
+                    "surface-tint": "#4a4bd7",
+                    "on-surface": "#2d3337",
+                    "surface-container-highest": "#dde3e7",
+                    "on-background": "#2d3337",
+                    "secondary-fixed": "#f0dbff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-3xl shadow-[0_40px_60px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-bold tracking-tight text-indigo-600 font-headline">The Ethereal Voyager</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Explore</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">My Trips</a>
+<a class="text-indigo-600 font-semibold border-b-2 border-indigo-600" href="#">Itineraries</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold scale-105 active:scale-95 transition-transform hover:bg-primary-dim">Plan New Trip</button>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-3xl">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto space-y-16">
+<!-- Header Section -->
+<header class="max-w-3xl">
+<h1 class="text-5xl md:text-6xl font-headline font-extrabold tracking-tight text-on-surface mb-6">
+                Tailor Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Japanese Escape</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed">
+                Compare our AI-curated tiers for your Tokyo to Kyoto journey. From essential discovery to ultimate luxury.
+            </p>
+</header>
+<!-- Plan Comparison Table Section -->
+<section class="bg-surface-container-low p-1 px-1 md:p-8 rounded-xl overflow-hidden">
+<div class="grid grid-cols-4 gap-4 md:gap-6 min-w-[800px] md:min-w-0">
+<!-- Row: Empty Header -->
+<div class="flex items-end pb-4 font-headline font-bold text-lg text-on-surface-variant">Feature</div>
+<!-- Budget Header -->
+<div class="bg-surface-container-lowest p-6 rounded-t-lg text-center space-y-2 border-b-4 border-surface-container">
+<span class="text-sm font-bold tracking-widest text-outline uppercase">Budget</span>
+<div class="text-3xl font-extrabold text-on-surface">$1,450</div>
+<p class="text-xs text-on-surface-variant">Per Person</p>
+</div>
+<!-- Standard Header (Highlighted) -->
+<div class="bg-surface-container-lowest p-6 rounded-t-lg text-center space-y-2 relative border-b-4 border-primary shadow-xl">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-tighter">Most Popular</div>
+<span class="text-sm font-bold tracking-widest text-primary uppercase">Standard</span>
+<div class="text-3xl font-extrabold text-on-surface">$2,890</div>
+<p class="text-xs text-on-surface-variant">Per Person</p>
+</div>
+<!-- Premium Header -->
+<div class="bg-surface-container-lowest p-6 rounded-t-lg text-center space-y-2 border-b-4 border-surface-container">
+<span class="text-sm font-bold tracking-widest text-secondary uppercase">Premium</span>
+<div class="text-3xl font-extrabold text-on-surface">$5,400</div>
+<p class="text-xs text-on-surface-variant">Per Person</p>
+</div>
+<!-- Feature Rows -->
+<div class="py-4 font-semibold text-on-surface-variant border-b border-surface-variant">Stay</div>
+<div class="py-4 text-center border-b border-surface-variant text-on-surface">3★ Boutique Hostels</div>
+<div class="py-4 text-center border-b border-surface-variant font-medium text-on-surface bg-surface-container-lowest">4★ Modern Hotels</div>
+<div class="py-4 text-center border-b border-surface-variant text-on-surface">5★ Luxury Ryokans</div>
+<div class="py-4 font-semibold text-on-surface-variant border-b border-surface-variant">Transport</div>
+<div class="py-4 text-center border-b border-surface-variant text-on-surface">Regional Rail Pass</div>
+<div class="py-4 text-center border-b border-surface-variant font-medium text-on-surface bg-surface-container-lowest">7-Day JR Pass</div>
+<div class="py-4 text-center border-b border-surface-variant text-on-surface">Private Chauffeur</div>
+<div class="py-4 font-semibold text-on-surface-variant border-b border-surface-variant">Activities</div>
+<div class="py-4 text-center border-b border-surface-variant text-on-surface">Self-Guided Tours</div>
+<div class="py-4 text-center border-b border-surface-variant font-medium text-on-surface bg-surface-container-lowest">Guided Group Tours</div>
+<div class="py-4 text-center border-b border-surface-variant text-on-surface">Exclusive Experiences</div>
+<div class="py-4 font-semibold text-on-surface-variant border-b border-surface-variant">Dining</div>
+<div class="py-4 text-center border-b border-surface-variant text-on-surface">Daily $40 Allowance</div>
+<div class="py-4 text-center border-b border-surface-variant font-medium text-on-surface bg-surface-container-lowest">Daily $100 Allowance</div>
+<div class="py-4 text-center border-b border-surface-variant text-on-surface">Michelin Star Bookings</div>
+<!-- Footer Action Buttons -->
+<div></div>
+<div class="py-6 flex justify-center">
+<button class="text-primary font-bold hover:underline">Select Budget</button>
+</div>
+<div class="py-6 flex justify-center bg-surface-container-lowest rounded-b-lg">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold shadow-lg shadow-primary/20 scale-105">Keep Standard</button>
+</div>
+<div class="py-6 flex justify-center">
+<button class="text-secondary font-bold hover:underline">Upgrade to Premium</button>
+</div>
+</div>
+</section>
+<!-- Detailed Itinerary View -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-8">
+<!-- Left: Day-wise Itinerary -->
+<div class="lg:col-span-8 space-y-12">
+<div class="flex items-center justify-between">
+<h2 class="text-3xl font-headline font-bold text-on-surface">Your Selected Itinerary</h2>
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-sm font-bold">Standard Tier</span>
+</div>
+<!-- Timeline -->
+<div class="relative space-y-16">
+<!-- Vertical Line Connector -->
+<div class="absolute left-6 top-8 bottom-8 w-2 bg-surface-container-highest rounded-full"></div>
+<!-- Day 1 -->
+<div class="relative pl-20 group">
+<div class="absolute left-2.5 top-0 w-8 h-8 rounded-full bg-primary ring-8 ring-surface-container-low z-10"></div>
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Day 01</span>
+<h3 class="text-2xl font-headline font-bold">Arrival &amp; Neon Nights</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<img class="rounded-lg w-full h-48 object-cover" data-alt="vibrant neon lights of shibuya crossing at night with crowd movement and city glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCT9FctMhAkBRS7a2q0o-myrKWRd84Dtptzk8o6x-Rrt72vanUy_W21Tt1t0Bk9kXDGMGTyGBO_FGu3vJp0vdSgxHzvHR9w6-sHBoiE3N9Wd3v4pkSbstil1ivyTs8d4G3MUpPB47L6IoBoVHN89zT42QrF230owCfoXSOQIb0yBtGJhp-Vx1HW7MTvS7SLHd_x3lv4bIO--g6AdwkkS4kIQM-hTEUBCZOSwCk4PV-f27SfCIY_MZIsfgtUEgYs06gwfEmNQdZko-e"/>
+<div class="space-y-4">
+<p class="text-on-surface-variant leading-relaxed">Touchdown at Narita. Private transfer to Shinjuku. Evening exploration of Omoide Yokocho for authentic yakitori and atmosphere.</p>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-xs font-medium">Hotel Gracery</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-xs font-medium">Food Tour</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="relative pl-20 group">
+<div class="absolute left-2.5 top-0 w-8 h-8 rounded-full bg-primary ring-8 ring-surface-container-low z-10"></div>
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Day 02</span>
+<h3 class="text-2xl font-headline font-bold">Old Tokyo &amp; Art</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="space-y-4 order-2 md:order-1">
+<p class="text-on-surface-variant leading-relaxed">Morning visit to Senso-ji Temple in Asakusa. Afternoon spent at teamLab Borderless digital art museum for an immersive light experience.</p>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-xs font-medium">Culture</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-xs font-medium">Museum Entry</span>
+</div>
+</div>
+<img class="rounded-lg w-full h-48 object-cover order-1 md:order-2" data-alt="traditional japanese red lantern at senso-ji temple with temple architecture in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1H_qkppIu3Q-wWFNOTmT4WqT4fozIg4TdlTrtZnB-zUl8r_EORYrkJOMC8LZB3tZvzk1XP522W8X45jdC_XGglPr9Os8XK5P47t-AkQGFU_NGKxQ7jsgwC_DWEKIYNwUNn75ng5Vr_07HtYcrsQ1UGb7RDIaxTsc6JlPdDeOZzCuJQmAhevkbd8a9pGSRHBY67p80oSSJJYoOrCczL-M56GcMDekUEBV4x4q8_3HF7Wt_aO3zDrxDn2izr7G8trKn1qS0NvNd24Zu"/>
+</div>
+</div>
+</div>
+<!-- Day 3 -->
+<div class="relative pl-20 group">
+<div class="absolute left-2.5 top-0 w-8 h-8 rounded-full bg-primary-container ring-8 ring-surface-container-low z-10 animate-pulse"></div>
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm group-hover:shadow-md transition-shadow border-2 border-dashed border-primary/20">
+<div class="flex items-center justify-between mb-4">
+<span class="text-primary-dim font-bold tracking-widest uppercase text-sm">Day 03</span>
+<span class="text-xs font-semibold text-primary italic">AI Generating...</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface/40">Bullet Train to Kyoto</h3>
+<p class="text-on-surface-variant/40 mt-4">Drafting mountain views and traditional tea house experiences near the Philosopher's Path...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Cost Breakdown Sidebar -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Donut Chart & Breakdown -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+<h3 class="text-xl font-headline font-bold mb-8">Cost Breakdown</h3>
+<!-- Simplified CSS Donut Chart -->
+<div class="relative w-48 h-48 mx-auto mb-10">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#eaeef1" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#4a4bd7" stroke-dasharray="45 100" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#842cd3" stroke-dasharray="25 100" stroke-dashoffset="-45" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#b5146e" stroke-dasharray="30 100" stroke-dashoffset="-70" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-extrabold">$2,890</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">Total Budget</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-sm font-medium">Accommodation</span>
+</div>
+<span class="text-sm font-bold">$1,300</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="text-sm font-medium">Transport</span>
+</div>
+<span class="text-sm font-bold">$720</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<span class="text-sm font-medium">Dining &amp; Activities</span>
+</div>
+<span class="text-sm font-bold">$870</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-surface-container space-y-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-bold shadow-lg hover:shadow-primary/30 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                            Finalize Itinerary
+                        </button>
+<button class="w-full py-4 text-primary font-bold border-2 border-primary/20 rounded-full hover:bg-primary/5 transition-all">
+                            Save as Draft
+                        </button>
+</div>
+</div>
+<!-- AI Insight Card -->
+<div class="glass-panel p-8 rounded-lg shadow-sm border border-white/50 space-y-4">
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined">auto_awesome</span>
+<h4 class="font-bold text-sm uppercase tracking-widest">AI Concierge Tip</h4>
+</div>
+<p class="text-sm leading-relaxed text-on-surface-variant">
+                        "Choosing the <strong>Standard Plan</strong> for October allows you to witness the peak autumn foliage in Kyoto while staying within 15% of your initial budget goal."
+                    </p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 w-full py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-bold text-slate-900 text-xl">The Ethereal Voyager</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm text-slate-500 font-light hover:text-indigo-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-500 font-light hover:text-indigo-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-sm text-slate-500 font-light hover:text-indigo-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Cookie Settings</a>
+<a class="text-sm text-slate-500 font-light hover:text-indigo-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Contact Us</a>
+</div>
+<p class="text-sm text-slate-500 font-light">© 2024 The Ethereal Voyager. All rights reserved.</p>
+</div>
+</footer>
+</body></html>
